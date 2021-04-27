@@ -15,7 +15,7 @@
 
 <!-- Starting an immersive WebXR session requires user interaction.
     We start this one with a simple button. -->
-<button onclick="activateXR()">Lets begin!</button>
+<button onclick="activateXR()">Lets begin!!!!!</button>
 <script>
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
@@ -68,23 +68,12 @@ let reticle;
 loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
   reticle = gltf.scene;
   reticle.visible = false;
-  let aX = new Vector3()
-  reticle.matrix.extractBasis(aX, new Vector(), new Vector())
-
-  let yUp = new Vector3(0,1,0)
-  let alpha = Math.asin(aX.dot(yUp)) 
-                    
-  let m = new Matrix4()
-  m.makeRotationY(Math.PI+alpha) 
-
-  reticle.matrix.multiply(m)
   scene.add(reticle);
 })
 
 let flower;
 loader.load("media/gltf/shelf/Shelf.gltf", function(gltf) {
   flower = gltf.scene;
-  flower.scale.set(1,1,1);
 });
 
 session.addEventListener("select", (event) => {
