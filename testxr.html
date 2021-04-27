@@ -15,7 +15,7 @@
 
 <!-- Starting an immersive WebXR session requires user interaction.
     We start this one with a simple button. -->
-<button onclick="activateXR()">Lets begin!</button>
+<button onclick="activateXR()">Lets begin!!!!</button>
 <script>
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
@@ -74,6 +74,7 @@ loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/re
 let flower;
 loader.load("media/gltf/shelf/Shelf.gltf", function(gltf) {
   flower = gltf.scene;
+  flower.scale.set(10,10,10);
 });
 
 session.addEventListener("select", (event) => {
