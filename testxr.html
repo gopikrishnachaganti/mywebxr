@@ -68,6 +68,16 @@ let reticle;
 loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
   reticle = gltf.scene;
   reticle.visible = false;
+  let aX = new Vector3()
+  reticle.matrix.extractBasis(aX, new Vector(), new Vector())
+
+  let yUp = new Vector3(0,1,0)
+  let alpha = Math.asin(aX.dot(yUp)) 
+                    
+  let m = new Matrix4()
+  m.makeRotationY(Math.PI+alpha) 
+
+  reticle.matrix.multiply(m)
   scene.add(reticle);
 })
 
