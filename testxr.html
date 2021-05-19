@@ -15,7 +15,7 @@
 
 <!-- Starting an immersive WebXR session requires user interaction.
     We start this one with a simple button. -->
-<button onclick="activateXR()">Lets begin!!!</button>
+<button onclick="activateXR()">Lets begin--></button>
 <script>
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
@@ -114,10 +114,10 @@ session.addEventListener("select", (event) => {
   const pose = frame.getViewerPose(referenceSpace);
   if (pose) {
     // In mobile AR, we only have one view.
-    const view = pose.views[2];
+    const view = pose.views[1];
 
     const viewport = session.renderState.baseLayer.getViewport(view);
-    renderer.setSize(viewport.width, viewport.height)
+    //renderer.setSize(viewport.width, viewport.height)
 
     // Use the view's transform matrix and projection matrix to configure the THREE.camera.
     camera.matrix.fromArray(view.transform.matrix)
