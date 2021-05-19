@@ -17,6 +17,7 @@
     We start this one with a simple button. -->
 <button onclick="activateXR()">Lets begin to view!</button>
 <script>
+
 async function activateXR() {
   // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
   const canvas = document.createElement("canvas");
@@ -73,9 +74,9 @@ loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/re
   scene.add(reticle);
 })
 
-let flower;
+let shelf;
 loader.load("media/gltf/shelf/Shelf.gltf", function(gltf) {
-  flower = gltf.scene;
+  shelf = gltf.scene;
   
 });
 
@@ -86,16 +87,16 @@ loader.load("media/gltf/shelf/Shelf2.gltf", function(gltf) {
 });
   
 session.addEventListener("select", (event) => {
-  if (flower) {
-    const clone = flower.clone();
+  if (shelf) {
+    const clone = shelf.clone();
     clone.position.copy(reticle.position);
     scene.add(clone);
   }
   if (shelf) {
     const clone = shelf.clone();
-    scene.position.x += ( scene.position.x - center.x-2 );
-    scene.position.y += ( scene.position.y - center.y-2 );
-    scene.position.z += ( scene.position.z - center.z-2 );
+    scene.position.x += ( scene.position.x - center.x );
+    scene.position.y += ( scene.position.y - center.y );
+    scene.position.z += ( scene.position.z - center.z );
     clone.position.copy(scene.position);
     scene.add(clone);
   }
