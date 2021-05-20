@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="x-ua-compatible IE=edge"/> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>WebXR - Intensity!</title>
+    <title>WebXR - default!</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     
@@ -16,8 +16,9 @@
           <a-asset-item id="chips" src="media/gltf/shelf/chips.glb"></a-asset-item>
         </a-assets>
         
-        <a-light color="white" position="-1 1 0" intensity="1.0"></a-light>
-        <a-light color="white" position="0.15 1.46 1.0" intensity="1.0"></a-light>
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: 0.6" position="-0.5 1 1"></a-entity>
+
   
         <a-entity gltf-model="#shelf" 
         rotation="0 -90 0" 
