@@ -5,17 +5,21 @@
     <!-- <meta name="viewport" content="x-ua-compatible IE=edge"/> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
     <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=1, user-scalable=yes">
-    <title>Check WebXR!</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <title>Worse WebXR!</title>
+   <!-- 
+	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+	<!--    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>-->
     <!-- <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>-->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  
     
 </head>
 <body style='margin : 0px; overflow: hidden;'>
     <a-scene vr-mode-ui="enabled: false"
-		embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;' >
+		embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;' >
         <a-assets timeout="100000">
           <img id="082045001" src="media/gltf/shelf/082045001.jpg">
           <img id="chip" src="media/gltf/shelf/chip.png"/>
@@ -31,6 +35,7 @@
         rotation="0 -90 0" 
         scale="0.5 0.5 0.5"  
         position="0.5 1 0.5"
+		  look-at="[gps-camera]"
         ></a-entity>
        
         <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.65 1.5 1.0"></a-image>
