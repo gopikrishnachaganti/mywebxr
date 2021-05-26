@@ -5,18 +5,42 @@
     <!-- <meta name="viewport" content="x-ua-compatible IE=edge"/> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>Hit Now!</title>
+    <title>Check Now!</title>
    
 	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
-         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>-->
     <!--  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script> -->
-    
+    <style>
+      .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+      }
+    </style>
 </head>
-<body>
-    <a-scene webxr="optionalFeatures: hit-test;" id="scene">
+<body style="margin : 0px; overflow: hidden;">
+	<div class="arjs-loader">
+      <div>Loading, please wait...</div>
+    </div>
+    <a-scene vr-mode-ui="enabled: false;"
+      renderer="logarithmicDepthBuffer: true;"
+      embedded
+      arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
 	  <a-assets timeout="100000">
 		  <img id="082045001" src="media/gltf/shelf/082045001.jpg">
 	          <img id="chip" src="media/gltf/shelf/chip.png"/>
@@ -29,8 +53,6 @@
         rotation="0 -90 0" 
         scale="0.5 0.5 0.5"  
         position="0.5 1 0.5"
-        class="clickable"
-        gesture-handler="minScale: 0.25; maxScale: 10"
         ></a-entity>
        
         <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.65 1.5 1.0"></a-image>
@@ -71,8 +93,6 @@
         rotation="0 -90 0" 
         scale="0.5 0.5 0.5"  
         position="-0.8 1.0 1.0"
-        class="clickable"
-        gesture-handler="minScale: 0.25; maxScale: 10"
         ></a-entity>
         
         <a-box src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-0.4 1.75 1.0"></a-box>
