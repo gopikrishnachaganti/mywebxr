@@ -1,105 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <!-- <meta name="viewport" content="x-ua-compatible IE=edge"/> -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>Edge!</title>
-   
-	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-   <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
-	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>-->
-    <!--  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script> -->
-    <style>
-      .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .arjs-loader div {
-        text-align: center;
-        font-size: 1.25em;
-        color: white;
-      }
-    </style>
-</head>
-<body style="margin : 0px; overflow: hidden;">
-
-    <a-scene embedded arjs>
-	  <a-assets timeout="100000">
-		  <img id="082045001" src="media/gltf/shelf/082045001.jpg">
-	          <img id="chip" src="media/gltf/shelf/chip.png"/>
-	          <a-asset-item id="singleshelf" src="media/gltf/shelf/single_shelf.glb"></a-asset-item> 
-        	  <a-asset-item id="shelf" src="media/gltf/shelf/Shelf.gltf"></a-asset-item> 
-	          <a-asset-item id="chips" src="media/gltf/shelf/chips.glb"></a-asset-item>
-          </a-assets>
-        
-        <a-entity gltf-model="#shelf" 
-        rotation="0 -90 0" 
-        scale="0.5 0.5 0.5"  
-        position="0.5 1 0.5"
-        ></a-entity>
-       
-        <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.65 1.5 1.0"></a-image>
-        <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.55 1.5 1.0"></a-image>
-        <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.45 1.5 1.0"></a-image>
-        <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.35 1.5 1.0"></a-image>
-  
-       
-        
-        <a-entity gltf-model="#chips"
-        scale="0.00023 0.00023 0.00023"
-        rotation="0 180 0"
-        position="0.15 1.46 1.0"
-        ></a-entity>
-        
-  
-        <a-entity gltf-model="#chips"
-        scale="0.00023 0.00023 0.00023"
-        rotation="0 180 0"
-        position="0.05 1.46 1.0"
-        ></a-entity>
-        
-   
-        <a-entity gltf-model="#chips"
-        scale="0.00023 0.00023 0.00023"
-        rotation="0 180 0"
-        position="-0.05 1.46 1.0"
-        ></a-entity>
-  
-   
-        <a-entity gltf-model="#chips"
-        scale="0.00023 0.00023 0.00023"
-        rotation="0 180 0"
-        position="-0.15 1.46 1.0"
-        ></a-entity>
-        
-        <a-entity gltf-model="#singleshelf" 
-        rotation="0 -90 0" 
-        scale="0.5 0.5 0.5"  
-        position="-0.8 1.0 1.0"
-        ></a-entity>
-        
-        <a-box src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-0.4 1.75 1.0"></a-box>
-        <a-box src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-0.6 1.75 1.0"></a-box>
-        <a-box src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-0.8 1.75 1.0"></a-box>
-        <a-box src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-1.0 1.75 1.0"></a-box>
-        <a-box src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-1.2 1.75 1.0"></a-box>
-        
-        <!--animation-mixer-->        
-
-  	<a-entity camera></a-entity>
-    </a-scene>
-</body>
-
+<html>
+    <head>
+        <title>AR.js Basic Projected Camera Example</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <!-- Look-at component. We don't need this now, but we will later. -->
+        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    </head>
+    <body>
+    <a-scene
+        vr-mode-ui="enabled: false"
+        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
+        renderer='antialias: true; alpha: true'>
+            <a-camera gps-projected-camera rotation-reader></a-camera>
+            <a-box gps-projected-entity-place='latitude: your-lat; longitude: your-lon' material='color: red' scale='10 10 10'></a-box>
+        </a-scene>
+    </body>
 </html>
