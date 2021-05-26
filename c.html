@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="x-ua-compatible IE=edge"/> -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=1, user-scalable=yes">
-    <title>Check Gesture!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1, user-scalable=yes">
+    <title>Style Gesture!</title>
    
 	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
@@ -14,27 +14,27 @@
   <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
     
 </head>
-<body style='margin : 0px; overflow: hidden;'>
+<body>
     <a-scene arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-  embedded
-  renderer="logarithmicDepthBuffer: true;"
-  vr-mode-ui="enabled: false"
-  gesture-detector
-  id="scene">
-	    <a-assets timeout="100000">
-          <img id="082045001" src="media/gltf/shelf/082045001.jpg">
-          <img id="chip" src="media/gltf/shelf/chip.png"/>
-          <a-asset-item id="singleshelf" src="media/gltf/shelf/single_shelf.glb"></a-asset-item> 
-          <a-asset-item id="shelf" src="media/gltf/shelf/Shelf.gltf"></a-asset-item> 
-          <a-asset-item id="chips" src="media/gltf/shelf/chips.glb"></a-asset-item>
-        </a-assets>
+  	embedded
+	renderer="logarithmicDepthBuffer: true;"
+	vr-mode-ui="enabled: true"
+  	gesture-detector
+   id="scene">
+	  <a-assets timeout="100000">
+		  <img id="082045001" src="media/gltf/shelf/082045001.jpg">
+	          <img id="chip" src="media/gltf/shelf/chip.png"/>
+	          <a-asset-item id="singleshelf" src="media/gltf/shelf/single_shelf.glb"></a-asset-item> 
+        	  <a-asset-item id="shelf" src="media/gltf/shelf/Shelf.gltf"></a-asset-item> 
+	          <a-asset-item id="chips" src="media/gltf/shelf/chips.glb"></a-asset-item>
+          </a-assets>
         
         <a-entity gltf-model="#shelf" 
         rotation="0 -90 0" 
         scale="0.5 0.5 0.5"  
         position="0.5 1 0.5"
-                  class="clickable"
-      gesture-handler="minScale: 0.25; maxScale: 10"
+        class="clickable"
+        gesture-handler="minScale: 0.25; maxScale: 10"
         ></a-entity>
        
         <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.65 1.5 1.0"></a-image>
@@ -75,8 +75,8 @@
         rotation="0 -90 0" 
         scale="0.5 0.5 0.5"  
         position="-0.8 1.0 1.0"
-                  class="clickable"
-      gesture-handler="minScale: 0.25; maxScale: 10"
+        class="clickable"
+        gesture-handler="minScale: 0.25; maxScale: 10"
         ></a-entity>
         
         <a-box src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-0.4 1.75 1.0"></a-box>
@@ -87,7 +87,7 @@
         
         <!--animation-mixer-->        
 
-  <a-entity camera></a-entity>
+  	<a-entity camera></a-entity>
     </a-scene>
 </body>
 
