@@ -1,134 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="x-ua-compatible IE=edge"/> -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
-    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=1, user-scalable=yes">
+<html>
+  <head>
+    <title>A-Frame Click & Drag Component - Basic</title>
+    <script src="https://jesstelford.github.io/aframe-click-drag-component/build.js"></script>
+  </head>
+  <body>
+    <a-scene>
 
-	<title>Ohh again!</title>
-   
-	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-	<script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
-   	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-         <!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>-->
-    	<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
-  
-    
-</head>
-<body style='margin : 0px; overflow: hidden;'>
-    <a-scene artoolkit>
-        <a-assets timeout="100000">
-          <img id="082045001" src="media/gltf/shelf/082045001.jpg">
-          <img id="chip" src="media/gltf/shelf/chip.png"/>
-	  <img id="ipad" src="media/gltf/shelf/ipad.jpg"/>
-          <img id="ipad2" src="media/gltf/shelf/ipad2.jpg"/>
-          <a-asset-item id="singleshelf" src="media/gltf/shelf/single_shelf.glb"></a-asset-item> 
-          <a-asset-item id="shelf" src="media/gltf/shelf/Shelf.gltf"></a-asset-item> 
-          <a-asset-item id="chips" src="media/gltf/shelf/chips.glb"></a-asset-item>
-        </a-assets>
-  
-        
+      <a-sphere click-drag position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-box click-drag position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
+      <a-cylinder click-drag position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 
-    
-        <a-entity gltf-model="#shelf" 
-        rotation="0 -90 0" 
-        scale="0.5 0.5 0.5"  
-        position="0.5 1 0.5"
-        ></a-entity>
-       
-        <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.65 1.5 1.0"></a-image>
-        <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.55 1.5 1.0"></a-image>
-        <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.45 1.5 1.0"></a-image>
-        <a-image src="#chip" width="1" height="1.30" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.35 1.5 1.0"></a-image>
-  
-       
-        
-        <a-entity gltf-model="#chips"
-        scale="0.00023 0.00023 0.00023"
-        rotation="0 180 0"
-        position="0.15 1.46 1.0"
-        ></a-entity>
-        
-  
-        <a-entity gltf-model="#chips"
-        scale="0.00023 0.00023 0.00023"
-        rotation="0 180 0"
-        position="0.05 1.46 1.0"
-        ></a-entity>
-        
-   
-        <a-entity gltf-model="#chips"
-        scale="0.00023 0.00023 0.00023"
-        rotation="0 180 0"
-        position="-0.05 1.46 1.0"
-        ></a-entity>
-  
-   
-        <a-entity gltf-model="#chips"
-        scale="0.00023 0.00023 0.00023"
-        rotation="0 180 0"
-        position="-0.15 1.46 1.0"
-        ></a-entity>
-        
-        <a-entity gltf-model="#singleshelf" 
-        rotation="0 -90 0" 
-        scale="0.5 0.5 0.5"  
-        position="-0.8 1.0 1.0"
-        ></a-entity>
-        
-        <a-box click-drag dynamic-body="mass: 10" src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-0.4 1.75 1.0"></a-box>
-        <a-box click-drag dynamic-body="mass: 10" src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-0.6 1.75 1.0"></a-box>
-        <a-box click-drag dynamic-body="mass: 10" src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-0.8 1.75 1.0"></a-box>
-        <a-box click-drag dynamic-body="mass: 10" src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-1.0 1.75 1.0"></a-box>
-        <a-box click-drag dynamic-body="mass: 10" src="#082045001" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="-1.2 1.75 1.0"></a-box>
-        
-        <!--animation-mixer-->        
-        
-	     
-        <a-box click-drag dynamic-body="mass: 10" src="#ipad" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.60 1.75 1.0"></a-box>
-        <a-box click-drag dynamic-body="mass: 10" src="#ipad2" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.45 1.75 1.0"></a-box>
-        <a-box click-drag dynamic-body="mass: 10" src="#ipad" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.30 1.75 1.0"></a-box>
-        <a-box click-drag dynamic-body="mass: 10" src="#ipad2" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.15 1.75 1.0"></a-box>
-        <a-box click-drag dynamic-body="mass: 10" src="#ipad" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.0 1.75 1.0"></a-box>
-	<a-entity position="0 0 0.1">
-        	<a-camera look-controls-enabled="true" keyboard-controls="mode: fps"></a-camera>
-      	</a-entity>
-	<script>
-        var draggable = document.querySelector('[click-drag]');
-        draggable.addEventListener('dragstart', function(dragInfo) {
-          draggable.components['dynamic-body'].pause();
-        });
-        draggable.addEventListener('dragend', function(dragInfo) {
+      <a-sky color="#ECECEC"></a-sky>
 
-          // We're dealing with a very heavy ball (mass: 10), so we want to
-          // reduce the velocity a little
-          var velocityDamp = 0.5;
-
-          var camera = draggable.sceneEl.camera;
-
-          // The "up" vector of the camera
-          var rotation = camera.up.clone();
-          // crossed with the "forward" / direction vector of the camera
-          // gives us the 3rd orthogonal axis of the camera's rotation
-          rotation.cross(camera.getWorldDirection());
-
-          // A damped down velocity vector
-          var rotatedVelocity = new window.AFRAME.THREE.Vector3(
-            dragInfo.detail.velocity.x * velocityDamp,
-            dragInfo.detail.velocity.y * velocityDamp,
-            dragInfo.detail.velocity.z * velocityDamp
-          );
-
-          // Which we then rotate *into* the screen by 45 degrees
-          // This gives the feeling of "tossing" the ball
-          rotatedVelocity.applyAxisAngle(rotation, Math.PI / 8);
-
-          draggable.components['dynamic-body'].play();
-          draggable.body.velocity.set(rotatedVelocity.x, rotatedVelocity.y, rotatedVelocity.z);
-        });
-      </script>
+      <a-entity position="0 0 3.8">
+        <a-camera look-controls-enabled="false" keyboard-controls="mode: fps"></a-camera>
+      </a-entity>
     </a-scene>
-</body>
-
+  </body>
 </html>
