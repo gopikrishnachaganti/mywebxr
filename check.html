@@ -1,24 +1,23 @@
 <html>
   <head>
-    <title>Basic</title>
+    <title>Check</title>
     <script src="https://jesstelford.github.io/aframe-click-drag-component/build.js"></script>
   </head>
   <body>
     <a-scene>
 	<a-assets timeout="100000">
-          <img id="082045001" src="media/gltf/shelf/082045001.jpg">
-          <img id="chip" src="media/gltf/shelf/chip.png"/>
-	  <img id="ipad" src="media/gltf/shelf/ipad.jpg"/>
-          <img id="ipad2" src="media/gltf/shelf/ipad2.jpg"/>
-          <a-asset-item id="singleshelf" src="media/gltf/shelf/single_shelf.glb"></a-asset-item> 
-          <a-asset-item id="shelf" src="media/gltf/shelf/Shelf.gltf"></a-asset-item> 
-          <a-asset-item id="chips" src="media/gltf/shelf/chips.glb"></a-asset-item>
+         <a-asset-item id="chips" src="media/gltf/shelf/chips.glb"></a-asset-item>
         </a-assets>
 	    
-	    <a-entity click-drag radius="2.0" gltf-model="#chips"
+	<a-sphere click-drag position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
+      	<a-box click-drag position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
+     	<a-cylinder click-drag position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      	<a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+	
+	<a-entity click-drag radius="2.0" gltf-model="#chips"
         scale="0.00023 0.00023 0.00023"
         rotation="0 180 0"
-        position="0.15 1.46 1.0"
+        position="1 1.25 -1"
         ></a-entity>
 	    
       <a-sphere click-drag position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
@@ -27,10 +26,10 @@
       <a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 
       <a-sky color="#ECECEC"></a-sky>
-<!-- 
+ 
       <a-entity position="0 0 3.8">
         <a-camera look-controls-enabled="false" keyboard-controls="mode: fps"></a-camera>
-      </a-entity> -->
+      </a-entity>
     </a-scene>
   </body>
 </html>
