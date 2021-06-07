@@ -6,7 +6,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
     <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=1, user-scalable=yes">
 
-	<title>Update!</title>
+	<title>Now?!</title>
    
 	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -131,10 +131,9 @@
         <a-box src="#ipad2" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.15 1.75 1.0"></a-box>
         <a-box src="#ipad" width="1.4" height="1.50" scale="0.1 0.1 0.1" rotation=" 0 180 0" position="0.0 1.75 1.0"></a-box>
 	    
-
-	<a-camera position="0 0 -0.5" look-controls="enabled:false">
-     		<a-cursor></a-cursor>
-   	</a-camera>
+	<a-entity id="rig" position="0 1.5 -0.5">
+	  <a-entity id="camera" camera look-controls></a-entity>
+	</a-entity>
 	 
     </a-scene>
 </body>
