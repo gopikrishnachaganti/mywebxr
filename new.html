@@ -6,18 +6,14 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
     <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=1, user-scalable=yes">
 
-	<title>Camera!</title>
+	<title>Update!</title>
    
 	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 	<!--         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
      <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
-  
-    
-</head>
-<body style='margin : 0px; overflow: hidden;'>
-	<script type="text/javascript">
+  	<script type="text/javascript">
     AFRAME.registerComponent('drag-rotate-component',{
       schema : { speed : {default:1}},
       init : function(){
@@ -56,6 +52,10 @@
       }
     });
   </script>
+    
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+
     <a-scene artoolkit>
         <a-assets timeout="100000">
           <img id="082045001" src="media/gltf/shelf/082045001.jpg">
